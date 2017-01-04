@@ -9,7 +9,7 @@ A tiny boilerplate for HTML5 games featuring a square, centered and responsive c
 
 **Features:**
 
-- Less than 500 bytes gzipped
+- Less than 512 bytes gzipped
 - HTML boilerplate (doctype, meta charset, title, canvas, script, style)
 - Square canvas (1000 * 1000 px), always centered and adjusted to the screen, even when the screen is resized / rotated. (see variables ````canvas_size````, ````canvas_left```` and ````canvas_top````; the canvas id is ````a````)
 - Click and touch events update the variables ````click_x````, ````click_y````, ````down_x````, ````down_y````, ````move_x````, ````move_y````, ````up_x```` and ````up_y```` with values between 0 and 1000.

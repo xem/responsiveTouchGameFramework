@@ -13,7 +13,7 @@ onresize=onrotate=b=>{
 };
 
 update_mouse=e=>{
-  return [~~(((e.pageX||e.touches[0].pageX)-canvas_left)*1000/canvas_size),~~((e.pageY||e.touches[0].pageY)*1000/canvas_size)];
+  return [~~(((e.pageX||e.changedTouches[0].pageX)-canvas_left)*1000/canvas_size),~~((e.pageY||e.changedTouches[0].pageY)*1000/canvas_size)];
 }
 
 onclick=e=>{
