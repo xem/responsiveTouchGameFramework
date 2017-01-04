@@ -1,0 +1,58 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>responsiveTouchGameFramework</title>
+<canvas id=a width=1000 height=1000></canvas>
+<textarea id=i cols=20 rows=10></textarea>
+<script>
+
+onresize=onrotate=b=>{
+  b=a.getBoundingClientRect();
+  canvas_size=b.width;canvas_left=b.left;canvas_top=b.top;
+  /* your resize/rotate code here: */
+  i.value+="canvas " + canvas_size + " " + canvas_left + " " + canvas_top + "\n";
+};
+
+update_mouse=e=>{
+  return [~~(((e.pageX||e.touches[0].pageX)-canvas_left)*1000/canvas_size),~~((e.pageY||e.touches[0].pageY)*1000/canvas_size)];
+}
+
+onclick=e=>{
+  [click_x,click_y]=update_mouse(e);
+  /* your click code here */
+  i.value+="click " + click_x + " " + click_y + "\n";
+  i.scrollTop = i.scrollHeight;
+};
+
+onmousedown=ontouchstart=e=>{
+  [down_x,down_y]=update_mouse(e);
+  /* your mousedown code here: */
+  i.value+="down " + down_x + " " + down_y + "\n";
+  i.scrollTop = i.scrollHeight;
+};
+
+onmousemove=touchmove=e=>{
+  [move_x,move_y]=update_mouse(e);
+  /* your mousemove code here: */
+  i.value+="move " + move_x + " " + move_y + "\n";
+  i.scrollTop = i.scrollHeight;
+};
+
+onmouseup=ontouchend=e=>{
+  [up_x,up_y]=update_mouse(e);
+  /* your mouseup code here: */
+  i.value+="up " + up_x + " " + up_y + "\n";
+  i.scrollTop = i.scrollHeight;
+};
+
+onload=e=>{
+  onresize();
+  /* your onload code here */
+  i.value+="load \n";
+  i.scrollTop = i.scrollHeight;
+}
+
+</script>
+<style>
+  #a{width:100vmin;position:absolute;top:50%;left:50%;transform:translateX(-50%)translateY(-50%);background:#def}
+  #i{position:absolute;z-index:2}
+</style>

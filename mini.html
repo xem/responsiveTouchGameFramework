@@ -1,0 +1,11 @@
+<!doctype html><meta charset=utf-8><title></title><canvas id=a width=999 height=999>
+<script>
+onresize=onrotate=()=>{with(a.getBoundingClientRect())canvas_size=width,canvas_left=left,canvas_top=top};
+update_mouse=e=>[~~(((e.pageX||e.touches[0].pageX)-canvas_left)*999/canvas_size),~~((e.pageY||e.touches[0].pageY)*999/canvas_size)];
+onclick=e=>{[click_x,click_y]=update_mouse(e)};
+onmousedown=ontouchstart=e=>{[down_x,down_y]=update_mouse(e)};
+onmousemove=touchmove=e=>{[move_x,move_y]=update_mouse(e)};
+onmouseup=ontouchend=e=>{[up_x,up_y]=update_mouse(e)};
+onload=e=>{onresize()}
+</script>
+<style>#a{width:99.5vmin;position:absolute;top:49.9%;left:49.9%;transform:translateX(-50%)translateY(-50%);background:#def}
