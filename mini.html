@@ -4,8 +4,8 @@ onresize=onrotate=()=>{with(a.getBoundingClientRect())canvas_size=width,canvas_l
 update_mouse=e=>[~~(((e.pageX||e.changedTouches[0].pageX)-canvas_left)*999/canvas_size),~~((e.pageY||e.changedTouches[0].pageY)*999/canvas_size)];
 onclick=e=>{[click_x,click_y]=update_mouse(e)};
 onmousedown=ontouchstart=e=>{[down_x,down_y]=update_mouse(e)};
-onmousemove=ontouchmove=e=>{e.preventDefault();[move_x,move_y]=update_mouse(e)};
+onmousemove=ontouchmove=e=>{[move_x,move_y]=update_mouse(e)};
 onmouseup=ontouchend=e=>{[up_x,up_y]=update_mouse(e)};
 onload=e=>{onresize()}
 </script>
-<style>#a{width:99.5vmin;position:absolute;top:49.9%;left:49.9%;transform:translateX(-50%)translateY(-50%);background:#def}
+<style>*{position:fixed}#a{width:99.5vmin;top:49.9%;left:49.9%;transform:translateX(-50%)translateY(-50%);background:#def}

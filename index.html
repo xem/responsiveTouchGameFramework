@@ -31,7 +31,6 @@ onmousedown=ontouchstart=e=>{
 };
 
 onmousemove=ontouchmove=e=>{
-  e.preventDefault();
   [move_x,move_y]=update_mouse(e);
   /* your mousemove code here: */
   i.value+="move " + move_x + " " + move_y + "\n";
@@ -55,6 +54,6 @@ onload=e=>{
 </script>
 <style>
   *{position:fixed}
-  #a{width:100vmin;position:absolute;top:50%;left:50%;transform:translateX(-50%)translateY(-50%);background:#def}
+  #a{width:100vmin;top:50%;left:50%;transform:translateX(-50%)translateY(-50%);background:#def}
   #i{position:absolute;z-index:2}
 </style>
