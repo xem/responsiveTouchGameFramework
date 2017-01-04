@@ -30,7 +30,7 @@ onmousedown=ontouchstart=e=>{
   i.scrollTop = i.scrollHeight;
 };
 
-onmousemove=touchmove=e=>{
+onmousemove=ontouchmove=e=>{
   [move_x,move_y]=update_mouse(e);
   /* your mousemove code here: */
   i.value+="move " + move_x + " " + move_y + "\n";
@@ -53,6 +53,7 @@ onload=e=>{
 
 </script>
 <style>
+  html,body{margin:0;height:100%;width:100%;overflow:auto;-webkit-overflow-scrolling:touch}
   #a{width:100vmin;position:absolute;top:50%;left:50%;transform:translateX(-50%)translateY(-50%);background:#def}
   #i{position:absolute;z-index:2}
 </style>
