@@ -1,126 +1,36 @@
 <!doctype html>
 <meta charset=utf-8>
-<meta content="width=device-width,user-scalable=no" name=viewport>
-<meta name="apple-mobile-web-app-capable" content=yes>
-<meta name="apple-mobile-web-app-status-bar-style" content=black>
-<meta name="mobile-web-app-capable" content=yes>
-<title>responsiveTouchGameFramework</title>
+<meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+
+<title>TITLE</title>
+
 <canvas id=a></canvas>
 <textarea id=i cols=30 rows=10></textarea>
-<script>
 
-/* Customizable canvas size */
-canvas_width = 960;
-canvas_height = 540;
+<script src=init.js></script>
+<script src=load.js></script>
+<script src=mouse.js></script>
+<script src=resize.js></script>
 
-canvas_ratio = canvas_width / canvas_height;
-canvas_left = 0;
-canvas_top = 0;
-
-/* Resize */
-onresize = onrotate = b => {
-  
-  screen_ratio = innerWidth / innerHeight;
-  
-  /* Full width */
-  if(canvas_ratio > screen_ratio){
-    canvas_real_width = innerWidth;
-    canvas_real_height = innerWidth / canvas_ratio;
-    canvas_left = 0;
-    canvas_top = (innerHeight - canvas_real_height) / 2;
-  }
-  
-  /* Full height */
-  else {
-    canvas_real_width = innerHeight * canvas_ratio;
-    canvas_real_height = innerHeight;
-    canvas_left = (innerWidth - canvas_real_width) / 2;
-    canvas_top = 0;
-  }
-  a.width = canvas_real_width;
-  a.height = canvas_real_height;
-  
-  /* your resize/rotate code here: */
-  i.value += "canvas " + ~~canvas_real_width + "*" + ~~canvas_real_height + " " + ~~canvas_left + " " + ~~canvas_top + "\n";
-  i.scrollTop = i.scrollHeight;
-  /* end */
-};
-
-/* Compute mouse / touch coordinates on canvas */
-update_mouse = e => {
-
-  pointer = {};
-  if(e.changedTouches){
-    pointer = e.changedTouches[0];
-  }
-  else {
-    pointer = e;
-  }
-  
-  return [
-    ~~(((pointer.pageX) - canvas_left) * canvas_width / canvas_real_width),
-    ~~(((pointer.pageY) - canvas_top) * canvas_height / canvas_real_height)
-  ];
-}
-
-/* Click */
-onclick = e => {
-  e.preventDefault();
-  [click_x, click_y] = update_mouse(e);
-  
-  /* your click code here */
-  i.value += "click " + click_x + " " + click_y + "\n";
-  i.scrollTop = i.scrollHeight;
-  /* end */
-};
-
-/* Mousedown / touchstart */
-onmousedown = ontouchstart = e => {
-  e.preventDefault();
-  [down_x, down_y] = update_mouse(e);
-  
-  /* your mousedown code here: */
-  i.value += "down " + down_x + " " + down_y + "\n";
-  i.scrollTop = i.scrollHeight;
-  /* end */
-  
-};
-
-/* Mousemove / touchmove */
-onmousemove = ontouchmove = e => {
-  e.preventDefault();
-  [move_x, move_y] = update_mouse(e);
-  
-  /* your mousemove code here: */
-  i.value += "move " + move_x + " " + move_y + "\n";
-  i.scrollTop = i.scrollHeight;
-  /* end */
-};
-
-/* Mouseup / touchend */
-onmouseup = ontouchend = e => {
-  [up_x, up_y] = update_mouse(e);
-  
-  /* your mouseup code here: */
-  i.value += "up " + up_x + " " + up_y + "\n";
-  i.scrollTop = i.scrollHeight;
-  /* end */
-};
-
-/* Load */
-onload = e => {
-  a.width = canvas_width;
-  a.height = canvas_height;
-  onresize();
-  
-  /* your onload code here */
-  i.value += "load \n";
-  i.scrollTop = i.scrollHeight;
-  /* end */
-}
-
-</script>
 <style>
-  #a{position:fixed;top:50%;left:50%;transform:translateX(-50%)translateY(-50%);background:#def}
-  #i{position:absolute;z-index:2}
+body {
+  background: #fff;
+}
+#a {
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translateX(-50%)translateY(-50%);
+  background:#def
+}
+
+#i{
+  position:absolute;
+  z-index:2
+}
 </style>
