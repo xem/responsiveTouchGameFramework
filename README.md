@@ -1,4 +1,4 @@
-## responsiveTouchGameFramework
+## responsiveTouchGameFramework v2
 
 A tiny boilerplate for HTML5 games featuring a responsive, centered, fixed-ratio canvas, and unified pointer events (mouse + touch).
 

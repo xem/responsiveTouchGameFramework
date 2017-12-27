@@ -7,8 +7,8 @@ onload = e => {
   onresize();
   
   /* your onload code here */
-  i.value += "load \n";
-  i.scrollTop = i.scrollHeight;
+  log.value += "load \n";
+  log.scrollTop = log.scrollHeight;
   /* end */
   
   setInterval(render, 33);

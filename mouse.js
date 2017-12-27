@@ -24,8 +24,8 @@ onclick = e => {
   [click_x, click_y] = update_mouse(e);
   
   /* your click code here */
-  i.value += "click " + click_x + " " + click_y + "\n";
-  i.scrollTop = i.scrollHeight;
+  log.value += "click " + click_x + " " + click_y + "\n";
+  log.scrollTop = log.scrollHeight;
   /* end */
 };
 
@@ -36,8 +36,8 @@ onmousedown = ontouchstart = e => {
   [down_x, down_y] = update_mouse(e);
   
   /* your mousedown code here: */
-  i.value += "down " + down_x + " " + down_y + "\n";
-  i.scrollTop = i.scrollHeight;
+  log.value += "down " + down_x + " " + down_y + "\n";
+  log.scrollTop = log.scrollHeight;
   /* end */
   
 };
@@ -48,8 +48,8 @@ onmousemove = ontouchmove = e => {
   [move_x, move_y] = update_mouse(e);
   
   /* your mousemove code here: */
-  i.value += "move " + move_x + " " + move_y + "\n";
-  i.scrollTop = i.scrollHeight;
+  log.value += "move " + move_x + " " + move_y + "\n";
+  log.scrollTop = log.scrollHeight;
   /* end */
 };
 
@@ -60,8 +60,8 @@ onmouseup = ontouchend = e => {
   [up_x, up_y] = update_mouse(e);
   
   /* your mouseup code here: */
-  i.value += "up " + up_x + " " + up_y + "\n";
-  i.scrollTop = i.scrollHeight;
+  log.value += "up " + up_x + " " + up_y + "\n";
+  log.scrollTop = log.scrollHeight;
   /* end */
   
   /* Add click on mobile */

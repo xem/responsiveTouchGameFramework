@@ -22,7 +22,7 @@ onresize = onrotate = b => {
   a.style.height = canvas_real_height + "px";
   
   /* your resize/rotate code here: */
-  i.value += "canvas " + ~~canvas_real_width + "*" + ~~canvas_real_height + " " + ~~canvas_left + " " + ~~canvas_top + "\n";
-  i.scrollTop = i.scrollHeight;
+  log.value += "canvas " + ~~canvas_real_width + "*" + ~~canvas_real_height + " " + ~~canvas_left + " " + ~~canvas_top + "\n";
+  log.scrollTop = log.scrollHeight;
   /* end */
 };
