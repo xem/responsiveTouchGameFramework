@@ -2,10 +2,10 @@
 canvas_width = 480;
 canvas_height = 270;
 
-/* Canvas offsets (changed onresize) */
-canvas_left = 0;
-canvas_top = 0;
 
-/* Canvas "real" size (changed onresize) */
-canvas_real_width = 0;
-canvas_real_height = 0
+/* Game variables */
+x = 100;
+y = 100;
+grab = false;
+grab_x = 0;
+grab_y = 0;
